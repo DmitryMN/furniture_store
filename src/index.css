@@ -20,11 +20,42 @@ header .logo {
     font-size: 20px;
 }
 
+header ul.nav {
+    float: right;
+    list-style: none;
+}
+
+header ul.nav li {
+    display: inline;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: 500ms ease;
+}
+
+header ul.nav li:hover {
+    opacity: 0.5;
+}
+
 header .presentation {
+    position: relative;
     margin: 50px 0;
     background: url(./img/header_logo.jpg);
     width: 100%;
     height: 500px;
     background-size: cover;
     background-position: center center;
+}
+header .presentation::after {
+    content: "The best products for your home";
+    position: absolute;
+    top: 45px;
+    left: 25px;
+    width: 200px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+}
+footer {
+    text-align: center;
+    margin-top: 100px;
 }
