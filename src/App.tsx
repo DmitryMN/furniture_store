@@ -12,7 +12,7 @@ function App() {
   return (
     <div className='wrapper'>
       <Header />
-      <Furniture />
+      <Furniture items={state} />
       <Footer />
     </div>
   );
