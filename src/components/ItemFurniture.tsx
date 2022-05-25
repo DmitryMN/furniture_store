@@ -6,9 +6,13 @@ type ItemFurniturePropsType = {
 }
 
 function ItemFurniture(props: ItemFurniturePropsType) {
-    const {title}: ItemType = props.item
+    const {title, description, price}: ItemType = props.item
     return(
-        <div>{title}</div>
+        <div className="item">
+            <h2>{title}</h2>
+            <p>{description}</p>
+            <b>{price}</b>            
+        </div>
     );
 }
 
