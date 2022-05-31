@@ -4,6 +4,7 @@ export type ItemType = {
     title: string
     description: string
     category: string
+    img: string
     price: number
 }
 
@@ -15,6 +16,7 @@ export const items: FurnitureItemsType = [{
     title: "white table",
     description: "",
     category: "table",
+    img: "white_table.jpg",
     price: 1500,
 },
 {
@@ -22,6 +24,7 @@ export const items: FurnitureItemsType = [{
     title: "red sofa",
     description: "",
     category: "sofa",
+    img: "red_sofa.jpg",
     price: 2000,
 },
 {
@@ -29,6 +32,7 @@ export const items: FurnitureItemsType = [{
     title: "black table",
     description: "",
     category: "table",
+    img: "black_table.jpg",
     price: 500,
 },
 {
@@ -36,6 +40,7 @@ export const items: FurnitureItemsType = [{
     title: "white chair",
     description: "",
     category: "chair",
+    img: "white_chair.jpg",
     price: 300,
 },
 {
@@ -43,6 +48,7 @@ export const items: FurnitureItemsType = [{
     title: "white stand",
     description: "",
     category: "stand",
+    img: "white_stand.jpg",
     price: 1200,
 },
 {
@@ -50,6 +56,7 @@ export const items: FurnitureItemsType = [{
     title: "green sofa",
     description: "",
     category: "sofa",
+    img: "green_sofa.jpg",
     price: 3000,
 },
 {
@@ -57,6 +64,7 @@ export const items: FurnitureItemsType = [{
     title: "black stand",
     description: "",
     category: "stand",
+    img: "black_stand.jpg",
     price: 1100,
 },
 {
@@ -64,5 +72,6 @@ export const items: FurnitureItemsType = [{
     title: "blue chair",
     description: "",
     category: "chair",
+    img: "blue_chair.jpg",
     price: 600,
 },];

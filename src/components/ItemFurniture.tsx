@@ -6,12 +6,14 @@ type ItemFurniturePropsType = {
 }
 
 function ItemFurniture(props: ItemFurniturePropsType) {
-    const {title, description, price}: ItemType = props.item
+    const {title, description, price, img}: ItemType = props.item
     return(
         <div className="item">
+            <img src={"./images/" + img}/>
             <h2>{title}</h2>
             <p>{description}</p>
-            <b>{price}</b>            
+            <b>{price} &euro;</b>
+            <div className="add_to_card">+</div>            
         </div>
     );
 }
