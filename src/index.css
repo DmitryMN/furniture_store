@@ -4,15 +4,21 @@
     margin: 0px;
     padding: 0px;
 }
+
 body {
     background: #fff;
     color: #222;
     font-family: 'Montherrat', sans-serif;
     font-weight: 300;
 }
+
 .wrapper {
     width: 1280px;
     margin: 50px auto;
+}
+
+header {
+    position: relative;
 }
 
 header .logo {
@@ -45,6 +51,7 @@ header .presentation {
     background-size: cover;
     background-position: center center;
 }
+
 header .presentation::after {
     content: "The best products for your home";
     position: absolute;
@@ -56,12 +63,35 @@ header .presentation::after {
     color: #fff;
 }
 
+header .shop_cart_btn {
+    float: right;
+    cursor: pointer;
+    transition: color 500ms ease;
+}
+
+header .shop_cart_btn:hover,
+header .shop_cart_btn.active {
+    color: #ca5252;
+}
+
+header .shop_cart {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    width: 450px;
+    background: #fafafa;
+    -webkit-box-shadow: 4px 5px 15px -7px #606060;
+    box-shadow: 4px 5px 15px -7px #606060;
+    z-index: 1000;
+}
+
 main {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 main .item {
     position: relative;
     width: 30%;
@@ -80,10 +110,13 @@ main .item img:hover {
     transform: scale(1.05);
 }
 
-main h2, main p, main b {
+main h2,
+main p,
+main b {
     margin: 10px 20px;
     color: #333;
 }
+
 main b {
     color: #5fa36a;
 }
