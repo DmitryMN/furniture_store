@@ -2,23 +2,21 @@ import React, {useState} from 'react';
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { FurnitureItemsType, items, ItemType } from './products/products';
+import { FurnitureItemsType, furnitureItems } from './products/products';
 import Furniture from './components/Furniture';
 
 function App() {
 
-  const [stateFurniture, setFurnitureState] = useState<FurnitureItemsType>(items);
-  const [stateCart, setCartState] = useState<Array<string>>([]);
+  const [stateFurniture, setFurnitureState] = useState<FurnitureItemsType>(furnitureItems);
 
   const addToOrder = (order: string) => {
-    setCartState([order, ...stateCart]);
-    console.log(stateCart);
+    setFurnitureState({...stateFurniture, cart: [...stateFurniture.cart, order]});
   }
 
   return (
     <div className='wrapper'>
-      <Header />
-      <Furniture items={stateFurniture} addToOrder={addToOrder} />
+      <Header cart={stateFurniture.cart} />
+      <Furniture items={stateFurniture.items} addToOrder={addToOrder} />
       <Footer />
     </div>
   );

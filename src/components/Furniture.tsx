@@ -3,7 +3,7 @@ import { FurnitureItemsType, ItemType } from "../products/products";
 import ItemFurniture from "./ItemFurniture";
 
 type FurniturePropsType = {
-    items: FurnitureItemsType
+    items: Array<ItemType>
     addToOrder: (order: string) => void
 }
 
