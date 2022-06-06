@@ -8,9 +8,16 @@ export type ItemType = {
     price: number
 }
 
+export type OrderType = {
+    id: number
+    title: string
+    img: string
+    price: number
+}
+
 export type FurnitureItemsType = {
     items: Array<ItemType>
-    cart: Array<any>
+    cart: Array<OrderType>
 }
 
 export const furnitureItems = {

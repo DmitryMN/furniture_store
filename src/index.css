@@ -85,6 +85,20 @@ header .shop_cart {
     z-index: 1000;
 }
 
+header .order {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 18px;
+}
+header .order__title {
+    flex: 1 1 auto;
+}
+
+header .order img {
+    width: 70px;
+}
+
 main {
     display: flex;
     width: 100%;

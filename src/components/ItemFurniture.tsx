@@ -1,13 +1,13 @@
 import React from "react";
-import { ItemType } from "../products/products";
+import { ItemType, OrderType } from "../products/products";
 
 type ItemFurniturePropsType = {
     item: ItemType
-    addToOrder: (order: string) => void
+    addToOrder: (order: OrderType) => void
 }
 
 function ItemFurniture(props: ItemFurniturePropsType) {
-    const {title, description, price, img} = props.item;
+    const {id, title, description, img, price} = props.item;
 
     return(
         <div className="item">
@@ -15,7 +15,7 @@ function ItemFurniture(props: ItemFurniturePropsType) {
             <h2>{title}</h2>
             <p>{description}</p>
             <b>{price} &euro;</b>
-            <div className="add_to_card" onClick={() => { props.addToOrder(title)}}>+</div>            
+            <div className="add_to_card" onClick={() => { props.addToOrder({id, title, img, price})}}>+</div>            
         </div>
     );
 }

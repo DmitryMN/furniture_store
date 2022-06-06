@@ -1,10 +1,10 @@
 import React from "react";
-import { FurnitureItemsType, ItemType } from "../products/products";
+import { ItemType, OrderType} from "../products/products";
 import ItemFurniture from "./ItemFurniture";
 
 type FurniturePropsType = {
     items: Array<ItemType>
-    addToOrder: (order: string) => void
+    addToOrder: (order: OrderType) => void
 }
 
 function Furniture(props: FurniturePropsType) {
