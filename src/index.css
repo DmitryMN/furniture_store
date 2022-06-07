@@ -91,12 +91,21 @@ header .order {
     width: 100%;
     font-size: 18px;
 }
-header .order__title {
-    flex: 1 1 auto;
-}
 
 header .order img {
     width: 70px;
+}
+
+header .order__title {
+    flex: 1 1 auto;
+    text-align: center;
+    line-height: 50px;
+}
+
+header .order__price {
+    text-align: center;
+    line-height: 50px;
+    padding: 0 10px 0 5px;
 }
 
 main {

@@ -9,7 +9,7 @@ export default function Order(props: OrderType) {
                 <span>{props.title}</span>
             </div>
             <div className="order__price">
-                <span>{props.price}&euro;</span>
+                <span>{props.price} &euro;</span>
             </div>
         </div>
     )
