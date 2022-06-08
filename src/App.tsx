@@ -10,7 +10,15 @@ function App() {
   const [stateFurniture, setFurnitureState] = useState<FurnitureItemsType>(furnitureItems);
 
   const addToOrder = (order: OrderType) => {
-    setFurnitureState({...stateFurniture, cart: [...stateFurniture.cart, order]});
+    let isInArray = false
+    stateFurniture.cart.forEach(el => {
+      if (el.id === order.id) {
+        isInArray = true
+      }
+    });
+
+    if(!isInArray) setFurnitureState({...stateFurniture, cart: [...stateFurniture.cart, order]});
+
   }
 
   return (
