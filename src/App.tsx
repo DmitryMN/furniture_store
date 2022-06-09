@@ -21,9 +21,13 @@ function App() {
 
   }
 
+  const deleteOrder = (id: number) => {
+    setFurnitureState({...stateFurniture, cart: stateFurniture.cart.filter((el) => el.id !== id)});
+  }
+
   return (
     <div className="wrapper">
-      <Header cart={stateFurniture.cart}/>
+      <Header cart={stateFurniture.cart} deleteOrder={deleteOrder}/>
       <Furniture items={stateFurniture.items} addToOrder={addToOrder} />
       <Footer />
     </div>

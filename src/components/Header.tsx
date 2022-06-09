@@ -5,12 +5,13 @@ import Order from "./Order";
 
 type HeaderPropsType = {
   cart: Array<OrderType>
+  deleteOrder: (id: number) => void
 }
 
-const showOrders = (props: Array<OrderType>) => {
+const showOrders = (props: Array<OrderType>, deleteOrder: (id: number) => void) => {
   return (
     <>
-      { props.map(el => (<Order key={el.id} id={el.id} title={el.title} img={el.img} price={el.price} />)) }
+      {props.map(el => (<Order key={el.id} order_el={el} deleteOrder={deleteOrder} />))}
     </>
   );
 }
@@ -35,7 +36,7 @@ export default function Header(props: HeaderPropsType) {
           <li>login</li>
         </ul>
         <FaShoppingCart onClick={() => setCartOpen(!cartOpen)} className={`shop_cart_btn ${cartOpen && 'active'}`} />
-        {cartOpen && <div className="shop_cart">{props.cart.length > 0 ? showOrders(props.cart) : showNothing()}</div>}
+        {cartOpen && <div className="shop_cart">{props.cart.length > 0 ? showOrders(props.cart, props.deleteOrder) : showNothing()}</div>}
       </div>
       <div className="presentation"></div>
     </header>

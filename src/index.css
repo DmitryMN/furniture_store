@@ -96,21 +96,29 @@ header .order img {
     width: 70px;
 }
 
-header .order__title {
+header .order .order__title {
     flex: 1 1 auto;
     text-align: center;
     line-height: 50px;
 }
 
-header .order__price {
+header .order .order__price {
     text-align: center;
     line-height: 50px;
     padding: 0 10px 0 5px;
 }
 
+header .order .order_delete {
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+    margin: 5px;
+    color: #ca5252;
+}
+
 main {
     display: flex;
-    width: 100%;
+    width: 100%;    
     flex-wrap: wrap;
     justify-content: center;
 }
