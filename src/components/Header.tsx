@@ -9,9 +9,12 @@ type HeaderPropsType = {
 }
 
 const showOrders = (props: Array<OrderType>, deleteOrder: (id: number) => void) => {
+  let summ = 0;
+  props.forEach(el => {summ += el.price})
   return (
     <>
       {props.map(el => (<Order key={el.id} order_el={el} deleteOrder={deleteOrder} />))}
+      <div className="show__summ">you price: {summ} &euro;</div>
     </>
   );
 }

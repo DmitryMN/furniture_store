@@ -85,6 +85,10 @@ header .shop_cart {
     z-index: 1000;
 }
 
+header .show__summ {
+    margin: 5px 0 10px 10px
+}
+
 header .order {
     display: flex;
     justify-content: space-between;
