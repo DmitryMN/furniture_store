@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { FurnitureItemsType, furnitureItems, OrderType } from './products/products';
 import Furniture from './components/Furniture';
+import Categories from './components/Categories';
 
 function App() {
 
@@ -21,6 +22,14 @@ function App() {
 
   }
 
+  const chooseCategory = (category: string) => {
+    if(category === "all") {
+      setFurnitureState({...furnitureItems});
+      return;
+    }
+    setFurnitureState({...furnitureItems, items: furnitureItems.items.filter((el) => el.category === category)});
+  }
+
   const deleteOrder = (id: number) => {
     setFurnitureState({...stateFurniture, cart: stateFurniture.cart.filter((el) => el.id !== id)});
   }
@@ -28,6 +37,7 @@ function App() {
   return (
     <div className="wrapper">
       <Header cart={stateFurniture.cart} deleteOrder={deleteOrder}/>
+      <Categories chooseCategory={chooseCategory}/>
       <Furniture items={stateFurniture.items} addToOrder={addToOrder} />
       <Footer />
     </div>
