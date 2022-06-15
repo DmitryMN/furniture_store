@@ -5,10 +5,12 @@ import Footer from './components/Footer';
 import { FurnitureItemsType, furnitureItems, OrderType } from './products/products';
 import Furniture from './components/Furniture';
 import Categories from './components/Categories';
+import ShowFurniture from './components/ShowFurniture';
 
 function App() {
 
   const [stateFurniture, setFurnitureState] = useState<FurnitureItemsType>(furnitureItems);
+  const [showFullItem, setShowFullItem] = useState<boolean>(false);
 
   const addToOrder = (order: OrderType) => {
     let isInArray = false
@@ -34,11 +36,16 @@ function App() {
     setFurnitureState({...stateFurniture, cart: stateFurniture.cart.filter((el) => el.id !== id)});
   }
 
+  const onShowItem = () => {
+
+  }
+
   return (
     <div className="wrapper">
       <Header cart={stateFurniture.cart} deleteOrder={deleteOrder}/>
       <Categories chooseCategory={chooseCategory}/>
       <Furniture items={stateFurniture.items} addToOrder={addToOrder} />
+      {showFullItem && <ShowFurniture />}
       <Footer />
     </div>
   );
