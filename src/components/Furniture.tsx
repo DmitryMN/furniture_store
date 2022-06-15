@@ -5,12 +5,13 @@ import ItemFurniture from "./ItemFurniture";
 type FurniturePropsType = {
     items: Array<ItemType>
     addToOrder: (order: OrderType) => void
+    onShowItem: (item: ItemType) => void
 }
 
 function Furniture(props: FurniturePropsType) {
     return(
         <main>
-            {props.items.map(elem => <ItemFurniture key={elem.id} item={elem} addToOrder={props.addToOrder}/>)}
+            {props.items.map(elem => <ItemFurniture key={elem.id} item={elem} addToOrder={props.addToOrder} onShowItem={props.onShowItem}/>)}
         </main>
     );
 }

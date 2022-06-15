@@ -1,17 +1,18 @@
 import React from "react";
 import { ItemType, OrderType } from "../products/products";
 
-type ItemFurniturePropsType = {
+export type ItemFurniturePropsType = {
     item: ItemType
     addToOrder: (order: OrderType) => void
+    onShowItem: (item: ItemType) => void
 }
 
-function ItemFurniture(props: ItemFurniturePropsType) {
-    const {id, title, description, img, price} = props.item;
+function ItemFurniture(props: ItemFurniturePropsType) { 
+    const {id, title, description, category, img, price} = props.item;
 
     return(
         <div className="item">
-            <img src={"./images/" + img}/>
+            <img onClick={() => {props.onShowItem({id, title, description, category, img, price})}} src={"./images/" + img}/>
             <h2>{title}</h2>
             <p>{description}</p>
             <b>{price} &euro;</b>
